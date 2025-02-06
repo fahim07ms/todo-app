@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-    font-family: "Raleway", serif;
+    font-family: "Fira Code", serif;
     font-weight: 500;
 }
 
@@ -45,6 +45,9 @@ body {
     border-radius: 10px;
     font-size: 30px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 3px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .todo-title {
@@ -68,4 +71,14 @@ body {
 .del-icon {
     color: rgba(9, 9, 228, 0.88);
     margin-top: 5px;
+}
+
+.todo-remaining, .todo-description {
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 8px;
+}
+
+.timer {
+    display: inline;
 }
