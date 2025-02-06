@@ -1,7 +1,9 @@
+// Material UI Components
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { useState } from 'react';
 
+// React Modules
+import { useState } from 'react';
 import { useNavigate } from "react-router-dom"; 
 import toast from 'react-hot-toast';
 
@@ -28,7 +30,7 @@ function Create() {
             "password": pass,
             "profile_picture": ""
         };
-        const response = await fetch("https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/register", {
+        const response = await fetch("http://3.109.211.104:8001/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -47,9 +49,9 @@ function Create() {
     }
 
     return <>
-        <div style={{display:'flex', justifyContent:'center', alignItems: 'center', height: '100vh'}}>
-            <div style={{display:'flex', flexDirection: 'column', alignItems:'center', gap: "10px"}}>
-                <div style={{fontSize:"40px"}}>Create an Account</div>
+        <div className='createPage'>
+            <div className='createForm' >
+                <div className='formHeading'>Create an Account</div>
                 <br/>
                 <br/>
                 <div>

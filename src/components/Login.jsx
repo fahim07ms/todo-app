@@ -1,5 +1,8 @@
+// Material UI Components
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+
+// React Modules
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
@@ -15,7 +18,7 @@ function Login() {
             "username": username, 
             "password": pass
         }  
-        const r = await fetch("https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/login", {
+        const r = await fetch("http://3.109.211.104:8001/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -34,9 +37,9 @@ function Login() {
     }
 
     return <>
-        <div style={{display:'flex', justifyContent:'center', alignItems: 'center', height: '100vh'}}>
+        <div className='loginPage'>
             <div>
-                <div style={{fontSize:"40px", textAlign:'center'}}>Login</div>
+                <div className='formHeading'>Login</div>
                 <br/>
                 <br/>
                 <div>

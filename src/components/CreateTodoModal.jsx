@@ -1,6 +1,9 @@
+// Material UI Components
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 import TextField from "@mui/material/TextField"
+
+// React Modules
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 
@@ -28,7 +31,7 @@ export function CreateTodoModal({ updateTodos }) {
             "deadline": "2025-01-29T16:34:37.131Z",
             "priority": parseInt(priority)
         };
-        const r = await fetch("https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/todo", {
+        const r = await fetch("http://3.109.211.104:8001/todo", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
