@@ -16,7 +16,7 @@ export function Todo({ todo, updateTodos }) {
 
   // If the task is deleted
   async function deleteClick() {
-    const r = await fetch("http://3.109.211.104:8001/todo/" + id, {
+    const r = await fetch("https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/todo/" + id, {
       method: "DELETE",
     });
     const j = await r.json();
@@ -27,7 +27,7 @@ export function Todo({ todo, updateTodos }) {
   // If `Done` or `Undone` was clicked
   // Then change it in API according to the action
   async function doneClick() {
-    const response = await fetch("http://3.109.211.104:8001/todo/" + id, {
+    const response = await fetch("https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/todo/" + id, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"

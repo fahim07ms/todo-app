@@ -25,7 +25,7 @@ export function Dashboard() {
 
   async function getTodos() {
     const r = await fetch(
-      "http://3.109.211.104:8001/todos"
+      "https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/todos"
     );
     const j = await r.json();
     j.sort((t1, t2) => t1.is_completed - t2.is_completed);

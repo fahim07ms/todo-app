@@ -25,7 +25,7 @@ function EditProfile({userData}) {
             profile_picture: ""
         }
         // PUT the data to the API
-        const response = await fetch(`http://3.109.211.104:8001/profile/${userData.username}`, {
+        const response = await fetch(`https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/profile/${userData.username}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -39,7 +39,7 @@ function EditProfile({userData}) {
 
         // Closes the Modal
         setOpenEditProfile(false);
-        
+
         setName("");
         setEmail("");
         setPhone("");

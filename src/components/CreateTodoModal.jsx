@@ -24,7 +24,7 @@ export function CreateTodoModal({ updateTodos }) {
       deadline: new Date(deadline).toISOString(),
       priority: parseInt(priority),
     };
-    const r = await fetch("http://3.109.211.104:8001/todo", {
+    const r = await fetch("https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/todo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,7 +40,7 @@ export function CreateTodoModal({ updateTodos }) {
     setDeadline(new Date());
 
     setIsOpen(false);
-    
+
     updateTodos();
   }
   return (

@@ -27,7 +27,7 @@ function Profile() {
 
   // Gets User Profile data
   const getProfileData = async () => {
-    const response = await fetch(`http://3.109.211.104:8001/profile/${username}`, {
+    const response = await fetch(`https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/profile/${username}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -40,7 +40,7 @@ function Profile() {
 
   // Gets task related data
   const getTaskData = async () => {
-    const tasksResponse = await fetch("http://3.109.211.104:8001/todos", {
+    const tasksResponse = await fetch("https://5nvfy5p7we.execute-api.ap-south-1.amazonaws.com/dev/todos", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
