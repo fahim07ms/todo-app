@@ -22,7 +22,6 @@ function App() {
       <Route path="/signup" element={<Create />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/edit-profile" element={<EditProfile />} />
     </Routes>
   </Router>
   <Toaster/>

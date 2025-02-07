@@ -1,171 +1,206 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 body {
-    font-family: "Fira Code", serif;
-    font-weight: 500;
+  font-family: "Fira Code", serif;
+  font-weight: 500;
 }
 
-.createPage, .loginPage {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh;
+.createPage,
+.loginPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .createForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .formHeading {
-    font-size: 40px;
-    align-items: center;
+  font-size: 40px;
+  align-items: center;
 }
 
 .dashboard {
-    display: flex;
-    align-items: center;   
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .dashboard-navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .todo {
-    padding: 20px;
-    margin: 10px;
-    border: 1px solid black;
-    border-left: 5px solid black;
-    border-radius: 10px;
-    font-size: 30px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 3px 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid black;
+  border-left: 5px solid black;
+  border-radius: 10px;
+  font-size: 30px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 3px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .todo-title {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .todo-btns-box {
-    display: flex;
-    width: 100%;
-    justify-content: end;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
 }
 
 .todo-title {
-    display: flex;
-    justify-content: start;
-    gap: 10px;
+  display: flex;
+  justify-content: start;
+  gap: 10px;
 }
 
 .del-icon {
-    color: rgba(9, 9, 228, 0.88);
-    margin-top: 5px;
+  color: rgba(9, 9, 228, 0.88);
+  margin-top: 5px;
 }
 
-.todo-remaining, .todo-description {
-    font-size: 18px;
-    font-weight: 400;
-    margin-left: 8px;
+.todo-remaining,
+.todo-description {
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 8px;
 }
 
 .timer {
-    display: inline;
+  display: inline;
 }
 
 .profile-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 34px;
 }
 
 .profile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    justify-content: start;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: start;
+  padding: 10px;
 }
 
 .profile-navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
 }
 
 .profile-navbar p {
-    font-size: 36px;
-    font-weight: 600;
+  font-size: 36px;
+  font-weight: 600;
 }
 
 .profile-card {
-    background-color: rgba(126, 161, 248, 0.386);
-    border: 3px solid rgba(55, 104, 227, 0.558);
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    padding: 20px;
-    text-align: center;
-    font-size: 22px;
+  background-color: rgba(126, 161, 248, 0.386);
+  border: 3px solid rgba(55, 104, 227, 0.558);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  padding: 20px;
+  text-align: center;
+  font-size: 22px;
 }
 
 .profile-header {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .profile-avatar {
-    width: 100px;
-    height: 100px;
-    font-size: "larger";
-    border-radius: 50%;
-    margin-bottom: 10px;
-    
+  width: 100px;
+  height: 100px;
+  font-size: "larger";
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 .profile-name {
-    margin: 0;
-    font-size: 32px;
+  margin: 0;
+  font-size: 32px;
 }
 
 .profile-username {
-    margin: 0;
-    color: #888;
+  margin: 0;
+  color: #888;
 }
 
 .profile-details p {
-    margin: 10px 0;
-    line-height: 1.6;
+  margin: 10px 0;
+  line-height: 1.6;
 }
 
 .profile-tasks {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .profile-tasks p {
-    margin: 5px 0;
+  margin: 5px 0;
 }
 
 .task-charts {
-    padding: 10px;
+  padding: 10px;
 }
 
 .pie-chart {
-    margin-top: 20px;
+  margin-top: 20px;
+}
+
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.sort-filter-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.filter-menu {
+  width: 200px;
+  padding: 8px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  font-family: 'Fira Code';
+  cursor: pointer;
 }

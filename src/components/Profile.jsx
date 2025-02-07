@@ -1,25 +1,33 @@
+// React modules
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
+// MUI Components
 import { PieChart } from "@mui/x-charts/PieChart";
 import Avatar from '@mui/material/Avatar';
 import { Button } from "@mui/material";
 
+// Components
 import Navbar from "./Navbar";
+import { EditProfile } from "./EditProfile";
 
 function Profile() {
+  // Navigation function
   const navigate = useNavigate();
+
+  // Get username stored in local storage
   const username = localStorage.getItem("username");
 
+  // Use states variables
   const [userData, setUserData] = useState("");
   const [totalTasks, setTotalTasks] = useState(0);
   const [taskCompleted, setTaskCompleted] = useState(0);
   const [taskEfficiency, setTaskEfficiency] = useState(0);
   const [taskIncompleted, setTaskIncompleted] = useState(0);
 
+  // Gets User Profile data
   const getProfileData = async () => {
-    const response = await fetch(
-      `http://3.109.211.104:8001/profile/${username}`,
-      {
+    const response = await fetch(`http://3.109.211.104:8001/profile/${username}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -30,6 +38,7 @@ function Profile() {
     setUserData(result);
   };
 
+  // Gets task related data
   const getTaskData = async () => {
     const tasksResponse = await fetch("http://3.109.211.104:8001/todos", {
       method: "GET",
@@ -38,17 +47,20 @@ function Profile() {
       },
     });
 
+    // Total tasks
     const tasks = await tasksResponse.json();
     setTotalTasks(tasks.length);
 
-    const totalCompletedTasks = tasks.filter(
-      (task) => task.is_completed === true
-    );
+    // Completed tasks
+    const totalCompletedTasks = tasks.filter((task) => task.is_completed === true);
     setTaskCompleted(totalCompletedTasks.length);
+
+    // Efficiency and incompleted tasks
     setTaskEfficiency((totalCompletedTasks.length / tasks.length) * 100);
     setTaskIncompleted((tasks.length - totalCompletedTasks.length));
   };
 
+  // Load data on every mount
   useEffect(() => {
     if (!username) navigate("/login");
     getProfileData();
@@ -80,7 +92,7 @@ function Profile() {
             </p>
           </div>
 
-          <Button variant="contained" onClick={() => {navigate("/edit-profile")}}>Edit</Button>
+          {userData && <EditProfile userData={userData} />}
         </div>
       </div>
       

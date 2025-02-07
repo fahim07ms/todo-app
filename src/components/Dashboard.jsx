@@ -6,6 +6,7 @@ import TextField from "@mui/material/TextField";
 import { Todo } from "./Todo";
 import { CreateTodoModal } from "./CreateTodoModal";
 import Navbar from "./Navbar";
+import Filter from "./Filter";
 
 // React Modules
 import { useEffect, useState } from "react";
@@ -17,6 +18,8 @@ export function Dashboard() {
   const username = localStorage.getItem("username");
 
   const [todolist, setTodoList] = useState([]);
+  const [filtered, setFilteredList] = useState([]);
+  const [filtering, setFiltering] = useState(false);
   const [search, setSearch] = useState("");
 
   async function getTodos() {
@@ -39,16 +42,13 @@ export function Dashboard() {
           <div className="dashboard-navbar">
             <h1>Welcome, {username}!</h1>
             <div>
-              {/* <Button
-                variant="outlined"
-                size="large"
-                color="error"
-                onClick={logoutClick}
-              >
-                Logout
-              </Button> */}
               <Navbar />
             </div>
+          </div>
+
+          <div className="sort-filter-div">
+            <Filter />
+            {todolist != [] && <Filter todos={todolist} setFiltering={setFiltering} setFilteredList={setFilteredList} />}
           </div>
           <div className="search-box" style={{ padding: "10px" }}>
             <TextField
@@ -59,7 +59,19 @@ export function Dashboard() {
             />
           </div>
           <div className="todolists">
-            {todolist.map((value, index) => {
+            {!filtering && todolist.map((value, index) => {
+              if (value.title.toLowerCase().includes(search.toLowerCase()))
+                return (
+                  <Todo 
+                    key={value.id}
+                    todo={value}
+                    updateTodos={getTodos}
+                  />
+                );
+              return <></>;
+            })}
+
+            {filtering && filtered.map((value, index) => {
               if (value.title.toLowerCase().includes(search.toLowerCase()))
                 return (
                   <Todo 

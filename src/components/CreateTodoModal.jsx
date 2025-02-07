@@ -10,18 +10,6 @@ import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: "400px",
-  bgcolor: "background.paper",
-  boxShadow: 24,
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-};
 export function CreateTodoModal({ updateTodos }) {
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState("");
@@ -58,7 +46,7 @@ export function CreateTodoModal({ updateTodos }) {
         Create
       </Button>
       <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-        <div style={style}>
+        <div className="modal-box">
           <div style={{ backgroundColor: "white", padding: "20px" }}>
             <h1>Add a Todo</h1>
             <br />

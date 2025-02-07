@@ -41,8 +41,8 @@ export function Todo({ todo, updateTodos }) {
 
   return (
     <div className="todo" style={{ 
-        borderColor:  priority > 8 ? "rgba(255, 0, 0, 0.6)" : "rgba(79, 214, 79, 0.6)",
-        backgroundColor:  priority > 8 ? "rgba(246, 144, 144, 0.16)" : "rgba(157, 228, 157, 0.16)",
+        borderColor:  priority > 5 ? (priority > 10 ? "rgba(255, 0, 0, 0.6)" : "rgba(217, 223, 97, 0.78)") : "rgba(79, 214, 79, 0.6)",
+        backgroundColor:  priority > 5 ? (priority > 10 ? "rgba(249, 115, 115, 0.2)" : "rgba(235, 247, 10, 0.2)") : "rgba(139, 245, 139, 0.2)",
         opacity: is_completed ? 0.7 : 1 
       }}>
       <div className="todo-title" style={{ textDecoration: is_completed ? "line-through" : "" }}>
