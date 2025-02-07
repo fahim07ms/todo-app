@@ -82,3 +82,90 @@ body {
 .timer {
     display: inline;
 }
+
+.profile-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 34px;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: start;
+    padding: 10px;
+}
+
+.profile-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+}
+
+.profile-navbar p {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.profile-card {
+    background-color: rgba(126, 161, 248, 0.386);
+    border: 3px solid rgba(55, 104, 227, 0.558);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.profile-header {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    font-size: "larger";
+    border-radius: 50%;
+    margin-bottom: 10px;
+    
+}
+
+.profile-name {
+    margin: 0;
+    font-size: 32px;
+}
+
+.profile-username {
+    margin: 0;
+    color: #888;
+}
+
+.profile-details p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.profile-tasks {
+    margin-top: 20px;
+}
+
+.profile-tasks p {
+    margin: 5px 0;
+}
+
+.task-charts {
+    padding: 10px;
+}
+
+.pie-chart {
+    margin-top: 20px;
+}

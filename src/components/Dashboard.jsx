@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 // Components
 import { Todo } from "./Todo";
 import { CreateTodoModal } from "./CreateTodoModal";
+import Navbar from "./Navbar";
 
 // React Modules
 import { useEffect, useState } from "react";
@@ -31,12 +32,6 @@ export function Dashboard() {
     getTodos();
   }, []);
 
-  function logoutClick() {
-    localStorage.removeItem("username");
-    toast.success("Logged out successfully");
-    navigate("/login");
-  }
-
   return (
     <>
       <div className="dashboard">
@@ -44,14 +39,15 @@ export function Dashboard() {
           <div className="dashboard-navbar">
             <h1>Welcome, {username}!</h1>
             <div>
-              <Button
+              {/* <Button
                 variant="outlined"
                 size="large"
                 color="error"
                 onClick={logoutClick}
               >
                 Logout
-              </Button>
+              </Button> */}
+              <Navbar />
             </div>
           </div>
           <div className="search-box" style={{ padding: "10px" }}>
@@ -66,7 +62,8 @@ export function Dashboard() {
             {todolist.map((value, index) => {
               if (value.title.toLowerCase().includes(search.toLowerCase()))
                 return (
-                  <Todo
+                  <Todo 
+                    key={value.id}
                     todo={value}
                     updateTodos={getTodos}
                   />
