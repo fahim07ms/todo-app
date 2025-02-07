@@ -33,11 +33,14 @@ export function CreateTodoModal({ updateTodos }) {
     });
     const j = await r.json();
     toast.success("Todo created");
+
     setTitle("");
     setDescription("");
     setPriority("");
     setDeadline(new Date());
+
     setIsOpen(false);
+    
     updateTodos();
   }
   return (

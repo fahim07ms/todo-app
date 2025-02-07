@@ -69,6 +69,8 @@ function Profile() {
 
   return (
     <div className="profile-page">
+
+        {/* Show the profile details */}
       <div className="profile-container">
         <div className="profile-navbar">
           <p>Profile</p>
@@ -77,7 +79,6 @@ function Profile() {
         <div className="profile-card">
           <div className="profile-header">
             {!userData.profile && <Avatar style={{ backgroundColor: "rgba(50, 101, 240, 0.92)" }} className="profile-avatar">{localStorage.getItem("username")[0].toUpperCase()}</Avatar>}
-            {/* {userData.profile && <FaceIcon className="profile-avatar" />} */}
             <h1 className="profile-name">{userData.name}</h1>
             <p className="profile-username">@{userData.username}</p>
           </div>
@@ -96,6 +97,7 @@ function Profile() {
         </div>
       </div>
       
+      {/* Show the task related details */}
       <div className="task-charts">
         <p style={{ fontSize: "36px", fontWeight: "600" }}>Task Details</p>
         <div className="profile-tasks">

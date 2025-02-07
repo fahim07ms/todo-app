@@ -19,7 +19,8 @@ function Timer({ deadline }) {
         }
 
     };
-
+    
+    // Time difference
     let timeDif = 0;
     useEffect(() => {
         let timeInterval = null;

@@ -22,6 +22,7 @@ function Navbar() {
     setAnchorEl(null);
   };
 
+  // When logout button selected
   function logoutClick() {
     localStorage.removeItem("username");
     toast.success("Logged out successfully");
@@ -30,6 +31,7 @@ function Navbar() {
 
   return (
     <div className="navbar">
+      {/* Navbar's avatar button */}
       <Button
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}

@@ -1,11 +1,17 @@
 import { useState } from "react";
 
 function Filter({setFilteredList, setFiltering , todos}) {
+  // Takes the priority and sorts according to it
   function handleFilterChange(priority) {
+    // Empty sorted arry
     let sortedTodos = [];
+    
+    // If no filtering selected then set filtering false to not show filtered list in `Dashboard` component
+    // Else set filtering true
     if (priority == "none") setFiltering(false);
     else setFiltering(true);
-
+   
+    // And show according to selection
     if (priority == "low") {
         sortedTodos = todos.filter(todo => (todo.priority <= 5));
     } else if (priority == "medium") {

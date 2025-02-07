@@ -7,6 +7,7 @@ import { Todo } from "./Todo";
 import { CreateTodoModal } from "./CreateTodoModal";
 import Navbar from "./Navbar";
 import Filter from "./Filter";
+import Sort from "./Sort";
 
 // React Modules
 import { useEffect, useState } from "react";
@@ -27,6 +28,7 @@ export function Dashboard() {
       "http://3.109.211.104:8001/todos"
     );
     const j = await r.json();
+    j.sort((t1, t2) => t1.is_completed - t2.is_completed);
     setTodoList(j);
   }
 
@@ -47,7 +49,7 @@ export function Dashboard() {
           </div>
 
           <div className="sort-filter-div">
-            <Filter />
+            {todolist != [] && <Sort todos={todolist} setTodos={setTodoList} updateTodos={getTodos} />}
             {todolist != [] && <Filter todos={todolist} setFiltering={setFiltering} setFilteredList={setFilteredList} />}
           </div>
           <div className="search-box" style={{ padding: "10px" }}>

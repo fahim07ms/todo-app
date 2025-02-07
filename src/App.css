@@ -194,7 +194,7 @@ body {
     padding: 20px;
 }
 
-.filter-menu {
+.filter-menu, .sort-menu {
   width: 200px;
   padding: 8px;
   font-size: 18px;

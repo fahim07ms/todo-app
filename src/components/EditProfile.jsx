@@ -15,15 +15,16 @@ function EditProfile({userData}) {
 
     const navigate = useNavigate();
     
+    // When user clicks save
     const handleClickSave = async () => {
-
+        // Prepare the body
         const body = {
             name: name,
             email: email,
             phone: phone,
             profile_picture: ""
         }
-
+        // PUT the data to the API
         const response = await fetch(`http://3.109.211.104:8001/profile/${userData.username}`, {
             method: "PUT",
             headers: {
@@ -33,11 +34,16 @@ function EditProfile({userData}) {
         });
         const result = await response.json();
 
+        // Show message
         toast.success(result.message);
+
+        // Closes the Modal
         setOpenEditProfile(false);
+        
         setName("");
         setEmail("");
         setPhone("");
+
         navigate("/profile");
     }
     

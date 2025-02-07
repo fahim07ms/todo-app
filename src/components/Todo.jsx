@@ -13,6 +13,8 @@ import toast from "react-hot-toast";
 export function Todo({ todo, updateTodos }) {
 
   const { title, description,priority, is_completed, id, deadline } = todo;  
+
+  // If the task is deleted
   async function deleteClick() {
     const r = await fetch("http://3.109.211.104:8001/todo/" + id, {
       method: "DELETE",
@@ -22,6 +24,8 @@ export function Todo({ todo, updateTodos }) {
     updateTodos();
   }
 
+  // If `Done` or `Undone` was clicked
+  // Then change it in API according to the action
   async function doneClick() {
     const response = await fetch("http://3.109.211.104:8001/todo/" + id, {
         method: "PUT",
@@ -34,8 +38,8 @@ export function Todo({ todo, updateTodos }) {
         })
     });
     const result = await response.json();
-    console.log(result);
     toast.success(is_completed ? "Task undone!" : "Task done!");
+
     updateTodos();
   }
 
@@ -43,27 +47,38 @@ export function Todo({ todo, updateTodos }) {
     <div className="todo" style={{ 
         borderColor:  priority > 5 ? (priority > 10 ? "rgba(255, 0, 0, 0.6)" : "rgba(217, 223, 97, 0.78)") : "rgba(79, 214, 79, 0.6)",
         backgroundColor:  priority > 5 ? (priority > 10 ? "rgba(249, 115, 115, 0.2)" : "rgba(235, 247, 10, 0.2)") : "rgba(139, 245, 139, 0.2)",
-        opacity: is_completed ? 0.7 : 1 
+        opacity: is_completed ? 0.7 : 1 ,
+        textDecoration: is_completed ? "line-through" : ""
       }}>
-      <div className="todo-title" style={{ textDecoration: is_completed ? "line-through" : "" }}>
+
+      <div className="todo-title" >
+        {/* If completed then show the green tick, otherwise pending symbol */}
         {is_completed ? <CheckCircleOutlinedIcon style={{ fontSize: "larger", color: "green" }} /> : <PendingActionsOutlinedIcon style={{ fontSize: "32px", color: "rgba(233, 152, 30, 0.89)" }} /> }
         {title}
       </div>
+
+      {/* If there is a description show that, otherwise don't */}
       {description && <div className="todo-description">
                         <span><b>Description:</b></span> {description}
                       </div>}
+
+      {/* Remaining Time */}
       <div className="todo-remaining">
         <span><b>Remaining Time:</b></span> <Timer deadline={deadline} />
       </div>
+
+      {/* Delete button */}
       <div className="todo-btns-box">
         <div onClick={deleteClick} style={{ cursor: "pointer" }}>
             <DeleteIcon className="del-icon" style={{ fontSize: "32px" }} />
         </div>
+        {/* Complete button */}
         <div className="completion-box">
             <Button onClick={doneClick} variant="outlined">
                 {is_completed ? "Undone" : "Done"}
             </Button>
         </div>
+
       </div>
     </div>
   );
