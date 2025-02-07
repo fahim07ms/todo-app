@@ -7,10 +7,18 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import LogoutIcon from '@mui/icons-material/Logout';
 
+import toast from "react-hot-toast";
+
 function Home() {
     const navigate = useNavigate();
     const username = localStorage.getItem("username")
 
+    // When logout button selected
+    function logoutClick() {
+        localStorage.removeItem("username");
+        toast.success("Logged out successfully");
+        navigate("/login");
+    }
     return (
         <div>
             <center style={{ fontSize: "32px", marginTop: "100px" }}>
@@ -21,7 +29,7 @@ function Home() {
             
                 <Button variant="contained" size="large" onClick={() => {navigate("/dashboard")}}><DashboardIcon style={{ marginRight: "10px" }} />Dashbord</Button>
                 <Button variant="contained" size="large" onClick={() => {navigate("/profile")}}><AccountBoxIcon style={{ marginRight: "10px" }} />Profile</Button>
-                <Button variant="contained" size="large" onClick={() => {navigate("/logout")}}><LogoutIcon style={{ marginRight: "10px" }} />Logout</Button>
+                <Button variant="contained" size="large" onClick={logoutClick}><LogoutIcon style={{ marginRight: "10px" }} />Logout</Button>
             
             </div>}
             {!username && 
@@ -35,4 +43,4 @@ function Home() {
     )
 }
 
-export { Home }
+export default Home;

@@ -22,7 +22,7 @@ function Navbar() {
     setAnchorEl(null);
   };
 
-  // When logout button selected
+  // When logout button clicked
   function logoutClick() {
     localStorage.removeItem("username");
     toast.success("Logged out successfully");
